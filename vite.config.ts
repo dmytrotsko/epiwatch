@@ -7,12 +7,14 @@ export default defineConfig({
   server: {
     proxy: {
       '/rest': {
-        target: 'http://localhost:8000',
+        target: 'https://staging.delphi.cmu.edu/epiportal',
         changeOrigin: true,
+        secure: true,
       },
       '/available-indicators': {
-        target: 'http://localhost:8000',
+        target: 'https://staging.delphi.cmu.edu/epiportal',
         changeOrigin: true,
+        secure: true,
       },
     },
   },
