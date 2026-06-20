@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import {
     Autocomplete,
     TextField,
@@ -36,7 +36,7 @@ async function coordsToCounty(lat: number, lng: number): Promise<County | null> 
 }
 
 function lookupZip(zip: string): County | null {
-    const fips = ZIP_TO_FIPS[zip];
+    const fips = (ZIP_TO_FIPS as Record<string, string>)[zip];
     if (!fips) {
         console.log('No FIPS found for ZIP:', zip);
         return null;
@@ -74,7 +74,7 @@ export function LocationField({value, onChange}: LocationFieldProps) {
         )
     }
 
-    function handleInputChange(event: unknown, newText: string) {
+    function handleInputChange(_event: unknown, newText: string) {
         setInputValue(newText);
         const trimmed = newText.trim();
         if (ZIP_PATTERN.test(trimmed)) {
@@ -87,7 +87,7 @@ export function LocationField({value, onChange}: LocationFieldProps) {
         <Autocomplete
             options={COUNTIES as County[]}
             value={value}
-            onChange={(event, newValue) => onChange(newValue)}
+            onChange={(_event, newValue) => onChange(newValue)}
             inputValue={inputValue}
             onInputChange={handleInputChange}
             getOptionLabel={(option) => `${option.name}, ${option.state}`}
