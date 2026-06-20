@@ -1,0 +1,138 @@
+[
+	{
+		"name": "COVID-19",
+		"display_name": "COVID-19"
+	},
+	{
+		"name": "Ebola",
+		"display_name": "Ebola"
+	},
+	{
+		"name": "Dengue",
+		"display_name": "dengue"
+	},
+	{
+		"name": "H5N1",
+		"display_name": "H5N1"
+	},
+	{
+		"name": "HIV",
+		"display_name": "HIV"
+	},
+	{
+		"name": "HIV 1",
+		"display_name": "HIV 1"
+	},
+	{
+		"name": "HIV 2",
+		"display_name": "HIV 2"
+	},
+	{
+		"name": "Human orthopneumovirus",
+		"display_name": "human orthopneumovirus"
+	},
+	{
+		"name": "ILI",
+		"display_name": "ILI"
+	},
+	{
+		"name": "Influenza",
+		"display_name": "influenza"
+	},
+	{
+		"name": "measles",
+		"display_name": "measles"
+	},
+	{
+		"name": "Mpox",
+		"display_name": "mpox"
+	},
+	{
+		"name": "mumps",
+		"display_name": "mumps"
+	},
+	{
+		"name": "Norovirus",
+		"display_name": "norovirus"
+	},
+	{
+		"name": "Plasmodium",
+		"display_name": "Plasmodium"
+	},
+	{
+		"name": "Pneumonia",
+		"display_name": "pneumonia"
+	},
+	{
+		"name": "RSV",
+		"display_name": "RSV"
+	},
+	{
+		"name": "tuberculosis",
+		"display_name": "tuberculosis"
+	},
+	{
+		"name": "Zika",
+		"display_name": "Zika"
+	},
+	{
+		"name": "pathogen independent",
+		"display_name": "pathogen independent"
+	},
+	{
+		"name": "influenza (seasonal)",
+		"display_name": "influenza (seasonal)"
+	},
+	{
+		"name": "influenza (novel strains)",
+		"display_name": "influenza (novel strains)"
+	},
+	{
+		"name": "acute respiratory illness",
+		"display_name": "acute respiratory illness"
+	},
+	{
+		"name": "adenovirus",
+		"display_name": "adenovirus"
+	},
+	{
+		"name": "rotavirus",
+		"display_name": "rotavirus"
+	},
+	{
+		"name": "rubella",
+		"display_name": "rubella"
+	},
+	{
+		"name": "coronaviruses (other than COVID-19)",
+		"display_name": "coronaviruses (other than COVID-19)"
+	},
+	{
+		"name": "rhinovirus",
+		"display_name": "rhinovirus"
+	},
+	{
+		"name": "enterovirus",
+		"display_name": "enterovirus"
+	},
+	{
+		"name": "human metapneumovirus",
+		"display_name": "human metapneumovirus"
+	},
+	{
+		"name": "mycoplasma",
+		"display_name": "mycoplasma"
+	},
+	{
+		"name": "parainfluenza",
+		"display_name": "parainfluenza"
+	},
+	{
+		"name": "pertussis",
+		"display_name": "pertussis"
+	},
+	{
+		"name": "n/a",
+		"display_name": "n/a"
+	}
+]
