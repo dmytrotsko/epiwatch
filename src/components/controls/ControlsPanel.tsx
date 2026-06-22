@@ -12,6 +12,20 @@ type Indicator = {
     description: string;
 };
 
+async function fetchIndicators(geoType: string, geoValue: string, pathogen: string): Promise<Indicator[]> {
+    const params = new URLSearchParams({
+        geo_type: geoType,
+        geo_value: geoValue,
+        pathogen,
+    });
+    const response = await fetch(`${API_BASE_URL}/available-indicators/?${params}`);
+    if (!response.ok) {
+        throw new Error(`Request failed: ${response.status}`);
+    }
+    const data: { indicators?: Indicator[] } = await response.json();
+    return data.indicators ?? [];
+}
+
 export function ControlsPanel() {
 
     const [selectedLocation, setSelectedLocation] = useState<County | null>(null);
@@ -23,23 +37,17 @@ export function ControlsPanel() {
     async function handleSubmit() {
         if (!selectedLocation || !selectedPathogen) return;
 
-        const params = new URLSearchParams({
-            geo_type: 'county',
-            geo_value: selectedLocation.fips.toLowerCase(),
-            pathogen: selectedPathogen.name,
-        });
-
         setLoading(true);
         setError(null);
+
         try {
-            const response = await fetch(
-                `${API_BASE_URL}/available-indicators/?${params}`
-            );
-            if (!response.ok) {
-                throw new Error(`Request failed: ${response.status}`);
+            const fips = selectedLocation.fips;
+            let results = await fetchIndicators('county', fips, selectedPathogen.name);
+            if (results.length === 0) {
+                const state = selectedLocation.state.toLowerCase();
+                results = await fetchIndicators('state', state, selectedPathogen.name);
             }
-            const data: { indicators?: Indicator[] } = await response.json();
-            setIndicators(data.indicators ?? []);
+            setIndicators(results);
         } catch (err) {
             console.log('Error fetching available indicators:', err);
             setError('Failed to load indicators.');
